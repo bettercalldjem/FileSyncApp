@@ -1,0 +1,27 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FileSyncApp.MainPage"
+             Title="Синхронизация файлов">
+    <VerticalStackLayout Padding="20">
+        <Label Text="Синхронизация папок" FontSize="24" HorizontalOptions="Center" />
+
+        <!-- Выбор директории источника -->
+        <HorizontalStackLayout>
+            <Entry x:Name="SourceDirectoryEntry" Placeholder="Выберите папку источника" IsReadOnly="True" WidthRequest="300" />
+            <Button Text="Выбрать" Clicked="OnSelectSourceDirectory" />
+        </HorizontalStackLayout>
+
+        <!-- Выбор директории назначения -->
+        <HorizontalStackLayout>
+            <Entry x:Name="DestinationDirectoryEntry" Placeholder="Выберите папку назначения" IsReadOnly="True" WidthRequest="300" />
+            <Button Text="Выбрать" Clicked="OnSelectDestinationDirectory" />
+        </HorizontalStackLayout>
+
+        <!-- Прогресс-бар -->
+        <ProgressBar x:Name="SyncProgressBar" Progress="0" HeightRequest="20" />
+
+        <!-- Кнопка синхронизации -->
+        <Button Text="Синхронизировать" Clicked="OnSynchronize" IsEnabled="True" />
+    </VerticalStackLayout>
+
+</ContentPage>
